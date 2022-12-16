@@ -1,19 +1,18 @@
 package com.example.androidprojecttodoapp
 
-import androidx.annotation.WorkerThread
+import androidx.lifecycle.LiveData
 
-class TasksRepo(private val tasksDao: TaskDao) {
-
-    val tasks = tasksDao.getAllTasks()
-
-    @WorkerThread
-    suspend fun update(task: Task) {
-        tasksDao.insert(task)
+class TaskRepo(private val taskDao: TaskDao) {
+    val allTask: LiveData<List<Task>> = taskDao.getAllTasks()
+    suspend fun insert(task: Task) {
+        taskDao.insert(task)
     }
 
-    @WorkerThread
     suspend fun delete(task: Task) {
-        tasksDao.delete(task)
+        taskDao.delete(task)
     }
 
+    suspend fun update(task: Task) {
+        taskDao.update(task)
+    }
 }

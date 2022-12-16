@@ -1,24 +1,19 @@
 package com.example.androidprojecttodoapp
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
-import kotlinx.coroutines.flow.Flow
 
 @Dao
-class TaskDao {
+interface TaskDao {
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insert(task: Task)
 
-   @Query("SELECT * FROM tasks")
-   fun getAllTasks():Flow<List<Task>>
-
-
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(weblink: Task)
+    @Update
+    suspend fun update(task: Task)
 
     @Delete
-    suspend fun delete(weblink: Task)
+    suspend fun delete(task: Task)
 
-    @Query("DELETE FROM tasks WHERE title=:title")
-    suspend fun delete(title: String)
-
-    @Query("DELETE FROM tasks")
-    suspend fun deleteAll()
+    @Query("Select * from tasksTable order by id ASC")
+    fun getAllTasks():LiveData<List<Task>>
 }

@@ -1,24 +1,19 @@
 package com.example.androidprojecttodoapp
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import java.io.Serializable
-import java.util.*
 
-
-@Entity(tableName = "tasks")
-class Task(var title: String, var description: String) : Serializable {
-
-
-
-
-    companion object {
-        fun emptyTask() = Task(title = "", description = "")
-    }
-
-    override fun toString(): String {
-        return "Weblink(title='$title', rating=$description)"
-    }
+@Entity(tableName = "tasksTable")
+class Task(
+    @ColumnInfo(name = "title")
+    val tasksTitle: String,
+    @ColumnInfo(name = "description")
+    val description: String,
+    @ColumnInfo(name = "timestamp")
+    val timeStamp: String
+) {
+    @PrimaryKey(autoGenerate = true)
+    var id = 0;
 
 }
-

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="5dp"
+    android:layout_margin="5dp"
+    app:cardBackgroundColor="@color/task_color"
+    app:cardElevation="4dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/TaskTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Task Title"
+            android:textSize="18dp"
+            android:layout_toLeftOf="@id/DeleteBTN"
+            android:textColor="@color/text_color"
+            android:layout_margin="4dp"
+            android:padding="4dp"/>
+
+        <TextView
+            android:id="@+id/TimeStamp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TaskTitle"
+            android:text="Time Stamp"
+            android:textColor="@color/text_color"
+            android:layout_toLeftOf="@+id/DeleteBTN"
+            android:layout_margin="4dp"
+            android:padding="4dp"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/DeleteBTN"
+            android:src="@drawable/ic_delete"
+            android:layout_centerVertical="true"
+            android:layout_margin="5dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:padding="4dp" />
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>
