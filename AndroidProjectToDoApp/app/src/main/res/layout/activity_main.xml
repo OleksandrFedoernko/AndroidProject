@@ -4,24 +4,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.androidprojecttodoapp.MainActivity"
-    android:background="@color/bg_color">
+    android:background="@color/bg_color"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/task_color"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif-monospace"
+            android:text="To do App"
+            android:layout_marginLeft="100dp"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="35dp"
+            android:textStyle="italic" />
+    </androidx.appcompat.widget.Toolbar>
+
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/RVTask"
+        android:id="@+id/taskRV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/task_rv_item"/>
+        android:layout_marginTop="5dp"
+        android:paddingTop="55dp"
+        tools:listitem="@layout/task_rv_item" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/idFAB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:id="@+id/addTask"
-        android:layout_margin="20dp"
-        android:src="@drawable/ic_baseline_add_24"
-        android:backgroundTint="@color/teal_700"
         android:layout_alignParentRight="true"
-        />
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/task_color"
+        android:src="@drawable/ic_baseline_add_24"
+        app:tint="@color/text_color" />
 
 </RelativeLayout>

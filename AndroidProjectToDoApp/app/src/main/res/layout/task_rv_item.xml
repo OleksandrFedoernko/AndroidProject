@@ -4,46 +4,60 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="5dp"
     android:layout_margin="5dp"
     app:cardBackgroundColor="@color/task_color"
-    app:cardElevation="4dp">
+    app:cardCornerRadius="5dp"
+    app:cardElevation="3dp">
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp">
 
         <TextView
-            android:id="@+id/TaskTitle"
+            android:id="@+id/idTVTask"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Task Title"
-            android:textSize="18dp"
-            android:layout_toLeftOf="@id/DeleteBTN"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="3dp"
+            android:layout_toLeftOf="@id/idIVDelete"
+            android:fontFamily="monospace"
+            android:padding="4dp"
+            android:text="Note"
             android:textColor="@color/text_color"
-            android:layout_margin="4dp"
-            android:padding="4dp"/>
+            android:textSize="18sp"
+            android:textStyle="italic" />
 
         <TextView
-            android:id="@+id/TimeStamp"
+            android:id="@+id/idTVDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/TaskTitle"
-            android:text="Time Stamp"
+            android:layout_below="@id/idTVTask"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="3dp"
+            android:layout_toLeftOf="@id/idIVDelete"
+            android:padding="4dp"
+            android:text="Updated At"
             android:textColor="@color/text_color"
-            android:layout_toLeftOf="@+id/DeleteBTN"
-            android:layout_margin="4dp"
-            android:padding="4dp"/>
+            android:textSize="13sp"
+            android:textStyle="italic"
+            android:typeface="monospace" />
+
         <ImageView
+            android:id="@+id/idIVDelete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/DeleteBTN"
-            android:src="@drawable/ic_delete"
-            android:layout_centerVertical="true"
-            android:layout_margin="5dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:padding="4dp" />
-    </RelativeLayout>
+            android:layout_centerVertical="true"
+            android:layout_margin="3dp"
+            android:padding="3dp"
+            android:src="@drawable/ic_delete" />
 
+    </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
