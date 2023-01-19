@@ -9,7 +9,7 @@ class Task(
     @ColumnInfo(name = "title")
     val tasksTitle: String,
     @ColumnInfo(name = "description")
-    val description: String,
+    val taskDescription: String,
     @ColumnInfo(name = "timestamp")
     val timeStamp: String
 ) {

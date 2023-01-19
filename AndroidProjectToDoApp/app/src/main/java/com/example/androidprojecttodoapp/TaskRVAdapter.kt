@@ -17,22 +17,18 @@ class TaskRVAdapter(
     private val allTask = ArrayList<Task>()
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val taskTV = itemView.findViewById<TextView>(R.id.TaskTitle)
-        val timeTV = itemView.findViewById<TextView>(R.id.TimeStamp)
-        val deleteTV = itemView.findViewById<ImageView>(R.id.DeleteBTN)
+        val taskTV = itemView.findViewById<TextView>(R.id.idTVTask)
+        val timeTV = itemView.findViewById<TextView>(R.id.idTVDate)
+        val deleteTV = itemView.findViewById<ImageView>(R.id.idIVDelete)
     }
 
-    interface TaskClickDeleteInterface {
-        fun onDeleteIconClick(task: Task)
-    }
-
-    interface TaskClickInterface {
-        fun onTaskClick(task: Task)
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val itemView =
-            LayoutInflater.from(parent.context).inflate(R.layout.task_rv_item, parent, false)
+
+        val itemView = LayoutInflater.from(parent.context).inflate(
+            R.layout.task_rv_item,
+            parent, false
+        )
         return ViewHolder(itemView)
     }
 
@@ -51,10 +47,20 @@ class TaskRVAdapter(
     override fun getItemCount(): Int {
         return allTask.size
     }
-    fun updateList(newList: List<Task>){
+
+    fun updateList(newList: List<Task>) {
         allTask.clear()
         allTask.addAll(newList)
         notifyDataSetChanged()
     }
+
+    interface TaskClickDeleteInterface {
+        fun onDeleteIconClick(task: Task)
+    }
+
+    interface TaskClickInterface {
+        fun onTaskClick(task: Task)
+    }
+
 }
 

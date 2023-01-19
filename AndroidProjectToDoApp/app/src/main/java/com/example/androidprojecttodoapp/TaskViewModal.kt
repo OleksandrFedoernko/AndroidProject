@@ -19,7 +19,6 @@ class TaskViewModal(application: Application) : AndroidViewModel(application) {
 
     fun deleteTask(task: Task) = viewModelScope.launch(Dispatchers.IO) {
         repo.delete(task)
-
     }
 
     fun updateTask(task: Task) = viewModelScope.launch(Dispatchers.IO) {
